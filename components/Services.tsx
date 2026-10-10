@@ -218,116 +218,118 @@ export default function Services() {
 
   return (
     <section id="expertise" className="bg-[#090b09] px-5 pb-24 pt-32 md:px-[47px]">
-      <Reveal>
-        <p className="eyebrow">01 / What I work on</p>
-        <h2 className="h2 mt-8 max-w-[900px]">Depends what brought you <span className="text-sage">here.</span></h2>
-        <p className="mt-16 max-w-[520px] pl-0 text-[17px] leading-[1.6] text-ink/60 md:ml-[510px]">A business to secure. An audit to prepare for. A terminal you would like to stop arguing with.</p>
-      </Reveal>
-      <div className="mt-24 grid gap-12 md:grid-cols-[395px_1fr] md:gap-[115px]">
-        
-<aside className="hidden md:block">
-  <div className="sticky top-[100px]">
-    <ul className="border-t border-white/10">
-      {items.map((it, i) => (
-        <li key={it.tab}>
-          <button
-            type="button"
-            onClick={() => {
-              document
-                .querySelector(`[data-i="${i}"]`)
-                ?.scrollIntoView({
-                  behavior: "smooth",
-                  block: "center",
-                });
-            }}
-            aria-current={active === i ? "step" : undefined}
-            className="group flex w-full items-center gap-5 border-b border-white/10 py-[14px] text-left font-mono text-[11px] uppercase tracking-[0.12em] transition-colors duration-300"
-            style={{
-              color: active === i ? "#f1f4ed" : "#5c615a",
-            }}
-          >
-            <span
-              className="text-[10px] transition-colors duration-300"
+      <div className="mx-auto w-full 2xl:max-w-[1440px]">
+        <Reveal>
+          <p className="eyebrow">01 / What I work on</p>
+          <h2 className="h2 mt-8 max-w-[900px]">Depends what brought you <span className="text-sage">here.</span></h2>
+          <p className="mt-16 max-w-[520px] pl-0 text-[17px] leading-[1.6] text-ink/60 md:ml-[510px]">A business to secure. An audit to prepare for. A terminal you would like to stop arguing with.</p>
+        </Reveal>
+        <div className="mt-24 grid gap-12 md:grid-cols-[395px_1fr] md:gap-[115px]">
+          
+  <aside className="hidden md:block">
+    <div className="sticky top-[100px]">
+      <ul className="border-t border-white/10">
+        {items.map((it, i) => (
+          <li key={it.tab}>
+            <button
+              type="button"
+              onClick={() => {
+                document
+                  .querySelector(`[data-i="${i}"]`)
+                  ?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                  });
+              }}
+              aria-current={active === i ? "step" : undefined}
+              className="group flex w-full items-center gap-5 border-b border-white/10 py-[14px] text-left font-mono text-[11px] uppercase tracking-[0.12em] transition-colors duration-300"
               style={{
-                color: active === i ? "#A3FF12" : "#5c615a",
+                color: active === i ? "#f1f4ed" : "#5c615a",
               }}
             >
-              0{i + 1}
-            </span>
+              <span
+                className="text-[10px] transition-colors duration-300"
+                style={{
+                  color: active === i ? "#A3FF12" : "#5c615a",
+                }}
+              >
+                0{i + 1}
+              </span>
 
-            <span className="flex-1">
-              {it.tab}
-            </span>
+              <span className="flex-1">
+                {it.tab}
+              </span>
 
-            <span
-              className="h-px transition-all duration-500"
-              style={{
-                width: active === i ? "28px" : "0px",
-                backgroundColor: "#A3FF12",
-              }}
-            />
-          </button>
-        </li>
-      ))}
-    </ul>
+              <span
+                className="h-px transition-all duration-500"
+                style={{
+                  width: active === i ? "28px" : "0px",
+                  backgroundColor: "#A3FF12",
+                }}
+              />
+            </button>
+          </li>
+        ))}
+      </ul>
 
-    <div className="relative mt-[30px] aspect-[395/330] overflow-hidden border border-white/10">
-      <Sys n={active} />
+      <div className="relative mt-[30px] aspect-[395/330] overflow-hidden border border-white/10">
+        <Sys n={active} />
 
-      <div className="pointer-events-none absolute inset-0 border border-white/[0.025]" />
+        <div className="pointer-events-none absolute inset-0 border border-white/[0.025]" />
+      </div>
+
+      <div className="mt-3 flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.12em] text-ink/40">
+        <span>System visualization</span>
+
+        <span className="flex items-center gap-2">
+          <span className="h-1.5 w-1.5 animate-pulse bg-[#A3FF12]" />
+          {`0${active + 1} / 03`}
+        </span>
+      </div>
     </div>
+  </aside>
 
-    <div className="mt-3 flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.12em] text-ink/40">
-      <span>System visualization</span>
-
-      <span className="flex items-center gap-2">
-        <span className="h-1.5 w-1.5 animate-pulse bg-[#A3FF12]" />
-        {`0${active + 1} / 03`}
-      </span>
-    </div>
-  </div>
-</aside>
-
-        <div className="border-t border-white/10">
-          {items.map((it, i) => (
-            <article key={it.tab} data-i={i} ref={(el) => { refs.current[i] = el; }} className="flex min-h-[100vh] flex-col justify-center border-t border-white/10 py-16 first:border-t-0">
-              <p className="mb-14 flex gap-6 font-mono text-[10px] uppercase tracking-[0.1em]"><span className="text-[#A3FF12]">0{i + 1}</span><span className="font-bold">{it.tab}</span></p>
-              <Reveal>
-                <h3 className="max-w-[640px] font-display text-[clamp(38px,4.6vw,66px)] font-medium leading-[1] tracking-[-0.04em]">{it.title}</h3>
-                <p className="mt-12 max-w-[680px] text-[17px] leading-[1.7] text-ink/60">{it.body}</p>
-                <ul className="mt-12 grid gap-x-[16px] md:grid-cols-2">
-                  {it.pts.map((p) => (
-                    <li key={p} className="flex items-center gap-4 border-t border-white/10 py-[14px] text-[15px] text-ink/85"><i className="h-[5px] w-[5px] shrink-0 bg-[#A3FF12]" />{p}</li>
-                  ))}
-                </ul>
-                <div className="mt-12 flex flex-wrap items-end justify-between gap-6">
-                  <button onClick={open} className="group flex items-center gap-4 border-b border-lime pb-3 font-mono text-[10px] font-bold uppercase tracking-[0.08em]">
-                    {it.cta}
-                    <span className="relative inline-flex h-[18px] w-[18px] items-center justify-center overflow-hidden">
-                      <FiArrowUpRight className="h-[18px] w-[18px] transition-all duration-500 ease-[cubic-bezier(.2,.7,.2,1)] group-hover:translate-x-[140%] group-hover:-translate-y-[140%]" />
-                      <FiArrowUpRight className="absolute h-[18px] w-[18px] -translate-x-[140%] translate-y-[140%] transition-all duration-500 ease-[cubic-bezier(.2,.7,.2,1)] group-hover:translate-x-0 group-hover:translate-y-0" />
-                    </span>
-                  </button>
-                  <p className="max-w-[260px] text-right text-[11px] text-ink/50">{it.note}</p>
-                </div>
-              </Reveal>
-              {i === 2 && (
-                <div className="mt-24 border-t border-b border-white/10 py-8">
-                  <div className="grid items-start gap-6 md:grid-cols-[1fr_1fr_auto]">
-                    <div><p className="mb-4 font-mono text-[9px] uppercase tracking-[0.1em] text-[#A3FF12]">Group sessions / Workshops</p><p className="font-display text-[24px] font-medium leading-[1.2] tracking-[-0.02em]">Need this for a room full of people?</p></div>
-                    <p className="max-w-[260px] pt-7 text-[12px] leading-relaxed text-ink/55">Workshops, college sessions, and team training can be discussed too.</p>
-                    <button onClick={open} className="group mt-7 flex items-center gap-4 border-b border-lime pb-3 font-mono text-[10px] font-bold uppercase tracking-[0.08em]">
-                      Discuss a workshop
+          <div className="border-t border-white/10">
+            {items.map((it, i) => (
+              <article key={it.tab} data-i={i} ref={(el) => { refs.current[i] = el; }} className="flex min-h-[100vh] flex-col justify-center border-t border-white/10 py-16 first:border-t-0">
+                <p className="mb-14 flex gap-6 font-mono text-[10px] uppercase tracking-[0.1em]"><span className="text-[#A3FF12]">0{i + 1}</span><span className="font-bold">{it.tab}</span></p>
+                <Reveal>
+                  <h3 className="max-w-[640px] font-display text-[clamp(38px,4.6vw,66px)] font-medium leading-[1] tracking-[-0.04em]">{it.title}</h3>
+                  <p className="mt-12 max-w-[680px] text-[17px] leading-[1.7] text-ink/60">{it.body}</p>
+                  <ul className="mt-12 grid gap-x-[16px] md:grid-cols-2">
+                    {it.pts.map((p) => (
+                      <li key={p} className="flex items-center gap-4 border-t border-white/10 py-[14px] text-[15px] text-ink/85"><i className="h-[5px] w-[5px] shrink-0 bg-[#A3FF12]" />{p}</li>
+                    ))}
+                  </ul>
+                  <div className="mt-12 flex flex-wrap items-end justify-between gap-6">
+                    <button onClick={open} className="group flex items-center gap-4 border-b border-lime pb-3 font-mono text-[10px] font-bold uppercase tracking-[0.08em]">
+                      {it.cta}
                       <span className="relative inline-flex h-[18px] w-[18px] items-center justify-center overflow-hidden">
                         <FiArrowUpRight className="h-[18px] w-[18px] transition-all duration-500 ease-[cubic-bezier(.2,.7,.2,1)] group-hover:translate-x-[140%] group-hover:-translate-y-[140%]" />
                         <FiArrowUpRight className="absolute h-[18px] w-[18px] -translate-x-[140%] translate-y-[140%] transition-all duration-500 ease-[cubic-bezier(.2,.7,.2,1)] group-hover:translate-x-0 group-hover:translate-y-0" />
                       </span>
                     </button>
+                    <p className="max-w-[260px] text-right text-[11px] text-ink/50">{it.note}</p>
                   </div>
-                </div>
-              )}
-            </article>
-          ))}
+                </Reveal>
+                {i === 2 && (
+                  <div className="mt-24 border-t border-b border-white/10 py-8">
+                    <div className="grid items-start gap-6 md:grid-cols-[1fr_1fr_auto]">
+                      <div><p className="mb-4 font-mono text-[9px] uppercase tracking-[0.1em] text-[#A3FF12]">Group sessions / Workshops</p><p className="font-display text-[24px] font-medium leading-[1.2] tracking-[-0.02em]">Need this for a room full of people?</p></div>
+                      <p className="max-w-[260px] pt-7 text-[12px] leading-relaxed text-ink/55">Workshops, college sessions, and team training can be discussed too.</p>
+                      <button onClick={open} className="group mt-7 flex items-center gap-4 border-b border-lime pb-3 font-mono text-[10px] font-bold uppercase tracking-[0.08em]">
+                        Discuss a workshop
+                        <span className="relative inline-flex h-[18px] w-[18px] items-center justify-center overflow-hidden">
+                          <FiArrowUpRight className="h-[18px] w-[18px] transition-all duration-500 ease-[cubic-bezier(.2,.7,.2,1)] group-hover:translate-x-[140%] group-hover:-translate-y-[140%]" />
+                          <FiArrowUpRight className="absolute h-[18px] w-[18px] -translate-x-[140%] translate-y-[140%] transition-all duration-500 ease-[cubic-bezier(.2,.7,.2,1)] group-hover:translate-x-0 group-hover:translate-y-0" />
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>

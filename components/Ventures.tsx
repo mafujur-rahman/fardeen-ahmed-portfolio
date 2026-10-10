@@ -56,131 +56,133 @@ export default function Ventures() {
       id="ventures"
       className="bg-[#090b09] overflow-hidden px-5 pb-32 pt-32 md:px-[47px]"
     >
-      <Reveal>
-        <p className="eyebrow">04 / Things I am building</p>
+      <div className="mx-auto w-full 2xl:max-w-[1440px]">
+        <Reveal>
+          <p className="eyebrow">04 / Things I am building</p>
 
-        <h2 className="h2 mt-8 max-w-[1100px]">
-          Apparently, one set of problems{" "}
-          <span className="text-sage">wasn’t enough.</span>
-        </h2>
-      </Reveal>
+          <h2 className="h2 mt-8 max-w-[1100px]">
+            Apparently, one set of problems{" "}
+            <span className="text-sage">wasn’t enough.</span>
+          </h2>
+        </Reveal>
 
-      <div className="mx-auto mt-24 grid max-w-[1379px] grid-cols-1 gap-[22px] md:grid-cols-2">
-        {/* CARD 01 — ETHICAL DEN */}
-        <Card
-          n="01"
-          name="Ethical Den"
-          direction="left"
-          text="My work across cybersecurity, technology, and branding comes together here. Security remains central, alongside the practical work of building and running a business."
-        >
-          <svg
-            viewBox="0 0 634 430"
-            className="h-full w-full bg-[#090b09]"
-            fill="none"
-            preserveAspectRatio="none"
-            role="img"
-            aria-label="Rotating geometric Ethical Den artwork"
+        <div className="mx-auto mt-24 grid max-w-[1379px] grid-cols-1 gap-[22px] md:grid-cols-2">
+          {/* CARD 01 — ETHICAL DEN */}
+          <Card
+            n="01"
+            name="Ethical Den"
+            direction="left"
+            text="My work across cybersecurity, technology, and branding comes together here. Security remains central, alongside the practical work of building and running a business."
           >
-            <defs>
-              <pattern
-                id="ventureGrid"
-                width="32"
-                height="32"
-                patternUnits="userSpaceOnUse"
-              >
-                <circle
-                  cx="1"
-                  cy="1"
-                  r=".6"
-                  fill="#ffffff"
-                  fillOpacity=".12"
-                />
-              </pattern>
-            </defs>
-
-            <rect width="634" height="430" fill="url(#ventureGrid)" />
-
-            {/* Main diamond rotates around its own center */}
-            <g className="venture-diamond">
-              <path
-                d="M242 47 L390 195 L221 322 L73 174 Z"
-                stroke="#ADFF47"
-                strokeWidth="1"
-              />
-            </g>
-
-            {/* Secondary outlined shape rotates independently */}
-            <g className="venture-outline">
-              <path
-                d="M541 229 L624 420 L423 480 L340 289 Z"
-                stroke="#687064"
-                strokeOpacity=".48"
-                strokeWidth="1"
-              />
-            </g>
-
-            <text
-              x="614"
-              y="411"
-              textAnchor="end"
-              fill="#ADFF47"
-              fontSize="8"
-              fontFamily="monospace"
-              fontWeight="700"
+            <svg
+              viewBox="0 0 634 430"
+              className="h-full w-full bg-[#090b09]"
+              fill="none"
+              preserveAspectRatio="none"
+              role="img"
+              aria-label="Rotating geometric Ethical Den artwork"
             >
-              ED / SYSTEMS
-            </text>
-          </svg>
-        </Card>
+              <defs>
+                <pattern
+                  id="ventureGrid"
+                  width="32"
+                  height="32"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <circle
+                    cx="1"
+                    cy="1"
+                    r=".6"
+                    fill="#ffffff"
+                    fillOpacity=".12"
+                  />
+                </pattern>
+              </defs>
 
-        {/* CARD 02 — HIVYR TECHNOLOGIES */}
-        <Card
-          n="02"
-          name="Hivyr Technologies"
-          direction="right"
-          text="Voice AI and conversational systems for business. A place to work on useful automation and the details that make a conversation feel less like a phone menu."
-        >
-          <svg
-            viewBox="0 0 634 430"
-            className="h-full w-full"
-            fill="none"
-            preserveAspectRatio="none"
-            role="img"
-            aria-label="Animated Hivyr sound wave"
+              <rect width="634" height="430" fill="url(#ventureGrid)" />
+
+              {/* Main diamond rotates around its own center */}
+              <g className="venture-diamond">
+                <path
+                  d="M242 47 L390 195 L221 322 L73 174 Z"
+                  stroke="#ADFF47"
+                  strokeWidth="1"
+                />
+              </g>
+
+              {/* Secondary outlined shape rotates independently */}
+              <g className="venture-outline">
+                <path
+                  d="M541 229 L624 420 L423 480 L340 289 Z"
+                  stroke="#687064"
+                  strokeOpacity=".48"
+                  strokeWidth="1"
+                />
+              </g>
+
+              <text
+                x="614"
+                y="411"
+                textAnchor="end"
+                fill="#ADFF47"
+                fontSize="8"
+                fontFamily="monospace"
+                fontWeight="700"
+              >
+                ED / SYSTEMS
+              </text>
+            </svg>
+          </Card>
+
+          {/* CARD 02 — HIVYR TECHNOLOGIES */}
+          <Card
+            n="02"
+            name="Hivyr Technologies"
+            direction="right"
+            text="Voice AI and conversational systems for business. A place to work on useful automation and the details that make a conversation feel less like a phone menu."
           >
-            <rect width="634" height="430" fill="#A6FF3F" />
+            <svg
+              viewBox="0 0 634 430"
+              className="h-full w-full"
+              fill="none"
+              preserveAspectRatio="none"
+              role="img"
+              aria-label="Animated Hivyr sound wave"
+            >
+              <rect width="634" height="430" fill="#A6FF3F" />
 
-            <ellipse
-              cx="317"
-              cy="215"
-              rx="240"
-              ry="164"
-              stroke="#26331C"
-              strokeOpacity=".42"
-              strokeWidth="1"
-            />
-
-            {[
-              56, 88, 120, 154, 190, 226, 266,
-              300, 266, 226, 190, 154, 120, 88, 56,
-            ].map((h, i) => (
-              <line
-                key={i}
-                className="venture-wave-bar"
-                style={{
-                  "--bar-dist": Math.abs(i - 7),
-                } as React.CSSProperties}
-                x1={237 + i * 11.5}
-                y1={215 - h / 2}
-                x2={237 + i * 11.5}
-                y2={215 + h / 2}
-                stroke="#10130D"
-                strokeWidth="3"
-                strokeLinecap="butt"
+              <ellipse
+                cx="317"
+                cy="215"
+                rx="240"
+                ry="164"
+                stroke="#26331C"
+                strokeOpacity=".42"
+                strokeWidth="1"
               />
-            ))}
-          </svg>
-        </Card>
+
+              {[
+                56, 88, 120, 154, 190, 226, 266,
+                300, 266, 226, 190, 154, 120, 88, 56,
+              ].map((h, i) => (
+                <line
+                  key={i}
+                  className="venture-wave-bar"
+                  style={{
+                    "--bar-dist": Math.abs(i - 7),
+                  } as React.CSSProperties}
+                  x1={237 + i * 11.5}
+                  y1={215 - h / 2}
+                  x2={237 + i * 11.5}
+                  y2={215 + h / 2}
+                  stroke="#10130D"
+                  strokeWidth="3"
+                  strokeLinecap="butt"
+                />
+              ))}
+            </svg>
+          </Card>
+        </div>
       </div>
 
       <style jsx global>{`
