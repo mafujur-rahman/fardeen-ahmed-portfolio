@@ -1,10 +1,39 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+
 export default function Hero() {
+  const headingRef = useRef(null);
+
+  useEffect(() => {
+    const letters = headingRef.current?.querySelectorAll(".letter");
+    if (!letters || letters.length === 0) return;
+
+    gsap.fromTo(
+      letters,
+      { y: 80, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.9,
+        ease: "power3.out",
+        stagger: 0.08,
+      }
+    );
+  }, []);
+
   return (
-    <section id="top" className="bg-[#090b09] relative h-screen min-h-[640px] px-5 pb-10 pt-[93px] md:px-[55px]">
+    <section
+      id="top"
+      className="bg-[#090b09] relative h-screen min-h-[640px] px-5 pb-10 pt-[93px] md:px-[55px]"
+    >
       <div className="relative h-full overflow-hidden border border-white/10 bg-[radial-gradient(circle_at_50%_45%,rgba(173,255,71,.06),transparent_55%)]">
         <div className="flex items-center justify-between border-b border-white/10 px-3 py-2 font-dm-mono text-[9px] uppercase tracking-[0.1em] text-mute">
           <span>FA / Personal system</span>
-          <span className="hidden text-[#A3FF12] md:block">Security status: Operational</span>
+          <span className="hidden text-[#A3FF12] md:block">
+            Security status: Operational
+          </span>
           <span>fardeenahmed.info</span>
         </div>
 
@@ -24,8 +53,18 @@ export default function Hero() {
             Cybersecurity practitioner / Founder
           </p>
 
-          <h1 className="whitespace-nowrap pl-[0.25em] font-space-grotesk text-[clamp(44px,14.8vw,214px)] font-bold leading-[0.9] tracking-[0.25em] text-ink">
-            FARDEEN
+          <h1
+            ref={headingRef}
+            className="whitespace-nowrap pl-[0.25em] font-space-grotesk text-[clamp(44px,14.8vw,214px)] font-bold leading-[0.9] tracking-[0.25em] text-ink overflow-hidden"
+          >
+            {"FARDEEN".split("").map((char, i) => (
+              <span
+                key={i}
+                className="letter inline-block will-change-transform"
+              >
+                {char}
+              </span>
+            ))}
           </h1>
 
           <p className="mt-[34px] font-dm-mono text-[10px] uppercase tracking-[0.12em] text-white/30">
